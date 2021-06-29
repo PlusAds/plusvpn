@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>PlusVPN</title>
+</head>
+<body>
+  
+
+  <!--Header-->
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a href="index.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Plus VPN</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a href="#plus-apps" class="mr-5 hover:text-indigo-900 font-bold title-font text-lg">  Apk  </a>
+        <a href="#plus-vpns" class="mr-5 hover:text-indigo-900 font-bold title-font text-lg">  Vpn  </a>
+      </nav>
+      
+    </div>
+  </header>
+
+
+  <!--App-->
+
+
+
+
+  <section id="plus-apps" class="text-gray-600 body-font">
+    <div class="container px-5 py-12 mx-auto place-items-stretch">
+      <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-indigo-500">Plus Apps</h1>
+        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Apps Developed By Plus Ads Team.</p>
+      </div>
+      <div class="flex flex-wrap -m-2">
+        <div class="xl:w-1/4 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">GFlip</h2>
+            <button onclick="downloadgflip()" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" >Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadgflip(){
+                   axios({
+                       url:'https://www.googleapis.com/drive/v3/files/1wIyAPbYijTd0Cf9p7ItnNUSUeNfU_fb1?alt=media&key=AIzaSyAJlU4IvmOnVD_xOYlIbv_i7t3Brw-mDWs',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'GFlip.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+          </div>
+        </div>
+
+        <div class="xl:w-1/4 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">GFlip-Auto</h2>
+            <button onclick="downloadgflip_auto()" href="" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadgflip_auto(){
+                   axios({
+                       url:'https://download1585.mediafire.com/q1tg6fhejawg/7wapq4ujbp5fur2/GFlip-Auto.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'GFlip-Auto.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+          </div>
+        </div>
+        
+        <div class="xl:w-1/4 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">PluroPlus</h2>
+            <button onclick="downloadpluroplus()"  href="" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadpluroplus(){
+                   axios({
+                       url:'https://download1648.mediafire.com/78e2wur8x5pg/ylcv0ugav8bc3hi/PluroPlus.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'PluroPlus.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Retro</h2>
+            <button onclick="downloadretro()"  href="" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadretro(){
+                   axios({
+                       url:'https://download1481.mediafire.com/4aaluv3h8ibg/e01xwmvyp55gbjp/Retro.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'Retro.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--Vpn-->
+
+  
+  <section id="plus-vpns" class="text-gray-600 body-font">
+    <div class="container px-5 py-12 mx-auto place-items-stretch">
+      <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-indigo-500">Plus Vpns</h1>
+        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Vpns Discoverd By Plus Ads Team.</p>
+      </div>
+      <div class="flex flex-wrap -m-2">
+        <div class="xl:w-1/3 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" />
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Fast Vpn</h2>
+            <button onclick="downloadfast()" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadfast(){
+                   axios({
+                       url:'https://download850.mediafire.com/ufiqhikg30jg/51pvap0a7ky0wzt/Fast_VPN.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'Fast-VPN.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+
+          </div>
+        </div>
+
+        <div class="xl:w-1/3 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Booster Vpn</h2>
+            <button onclick="downloadbooster()" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadbooster(){
+                   axios({
+                       url:'https://download1580.mediafire.com/sst3moeg756g/1olapdoux2sky56/BoosterVpn.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'Booster.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+
+          </div>
+        </div>
+        
+        <div class="xl:w-1/3 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Unlimited Vpn</h2>
+            <button onclick="downloadunlimited()" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadunlimited(){
+                   axios({
+                       url:'https://download1481.mediafire.com/i1gswgazx8zg/ycr756pva7ubi3u/Unlimited.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'Unlimited.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+
+          </div>
+        </div>
+        <div class="xl:w-1/3 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Betternet Vpn</h2>
+            <button onclick="downloadbetternet()" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadbetternet(){
+                   axios({
+                       url:'https://download2274.mediafire.com/3kf8br3hwnwg/h5gzz8m347c3cny/Betternet_Vpn.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'Betternet.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+
+          </div>
+        </div>
+        <div class="xl:w-1/3 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Thunder Vpn</h2>
+            <button onclick="downloadthunder()" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadthunder(){
+                   axios({
+                       url:'https://download2271.mediafire.com/0yrcarw16ong/9j8ly0gcn3lsrbj/Thunder.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'Thunder.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+
+          </div>
+        </div>
+        <div class="xl:w-1/3 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M13 12a1 1 0 11-2 0 1 1 0 012 0z" />
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Touch Vpn</h2>
+            <button onclick="downloadtouch()" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button>
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+            <script> 
+               function downloadtouch(){
+                   axios({
+                       url:'https://download2274.mediafire.com/exkx0u4tgqqg/yu7ppnzesw3wzgg/Touch-VPN.apk',
+                       method:'GET',
+                       responseType: 'blob'
+               })
+               .then((response) => {
+                      const url = window.URL
+                      .createObjectURL(new Blob([response.data]));
+                             const link = document.createElement('a');
+                             link.href = url;
+                             link.setAttribute('download', 'Touch.apk');
+                             document.body.appendChild(link);
+                             link.click();
+               })
+               }
+                 
+            </script>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  <!--Extra-->
+  <!--section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto place-items-stretch">
+      <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-indigo-500">Plus Apps</h1>
+        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Apps Developed By Plus Ads Team.</p>
+      </div>
+      <div class="flex flex-wrap -m-2">
+        <div class="xl:w-1/2 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">GFlip</h2>
+            <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+          </div>
+        </div>
+
+        <div class="xl:w-1/2 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">GFlip-Auto</h2>
+            <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+          </div>
+        </div>
+        
+        <div class="xl:w-1/2 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">PluroPlus</h2>
+            <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+          </div>
+        </div>
+        <div class="xl:w-1/2 md:w-1/2 p-2">
+          <div class="border border-indigo-400 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Retro</h2>
+            <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section-->
+
+
+
+
+  <!--Footer-->
+  <footer class="text-gray-600 body-font">
+    
+    <div class="bg-gray-100">
+      <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Plus VPN</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2021 Plus VPN |<a href="https://plusvpn.ml" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">Kashyap</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a class="text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>
