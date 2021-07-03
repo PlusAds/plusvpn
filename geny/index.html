@@ -20,10 +20,12 @@
 
         // The A1 notation of the values to retrieve.
         range: 'geny',  // TODO: Update placeholder value.
+        
+        majorDimension: 'ROWS',
 
         // How values should be represented in the output.
         // The default render option is ValueRenderOption.FORMATTED_VALUE.
-        valueRenderOption: 'ROWS',  // TODO: Update placeholder value.
+        valueRenderOption: '',  // TODO: Update placeholder value.
 
         // How dates, times, and durations should be represented in the output.
         // This is ignored if value_render_option is
@@ -35,7 +37,7 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        console.log(response.result);
+        console.log(response.result.values);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
