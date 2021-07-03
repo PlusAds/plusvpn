@@ -1,98 +1,81 @@
-<html>
-  <head><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script></head>
-  <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--
-    BEFORE RUNNING:
-    ---------------
-    1. If not already done, enable the Google Sheets API
-       and check the quota for your project at
-       https://console.developers.google.com/apis/api/sheets
-    2. Get access keys for your application. See
-       https://developers.google.com/api-client-library/javascript/start/start-js#get-access-keys-for-your-application
-    3. For additional information on authentication, see
-       https://developers.google.com/sheets/api/quickstart/js#step_2_set_up_the_sample
-    -->
-    <script>
-    function makeApiCall() {
-      var params = {
-        // The ID of the spreadsheet to retrieve data from.
-        spreadsheetId: '1xX0hj2GLO2RpRRSSCSirVo8E0c1fYorEIJ7Ku_CAnRw',  // TODO: Update placeholder value.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-        // The A1 notation of the values to retrieve.
-        range: 'geny',  // TODO: Update placeholder value.
-        
-        majorDimension: 'ROWS',
+   <!--Header-->
+   <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a href="https://plusvpn.ga" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Plus VPN</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a href="https://plusvpn.ga/#plus-apps" class="mr-5 hover:text-indigo-900 font-bold title-font text-lg">  Apk  </a>
+        <a href="https://plusvpn.ga/#plus-vpns" class="mr-5 hover:text-indigo-900 font-bold title-font text-lg">  Vpn  </a>
+        <a href="https://github.com/PlusAds/plusvpn/raw/main/Files/via.apk" class="mr-5 hover:text-indigo-900 font-bold title-font text-lg">  Via  </a>
+      </nav>
+      
+    </div>
+  </header>
 
-        // How values should be represented in the output.
-        // The default render option is ValueRenderOption.FORMATTED_VALUE.
-        valueRenderOption: 'FORMATTED_VALUE',  // TODO: Update placeholder value.
+  <section id="plus-apps" class="text-gray-600 body-font">
+    <div class="container px-5 py-6 mx-auto place-items-stretch">
+      <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-indigo-500">Plus DB</h1>
+      </div>
+  <iframe class="border border-indigo-500 p-6 rounded-lg" src="https://script.google.com/macros/s/AKfycbwAhWuUDxQL1lu3VsR1x3XRy8SMDKVqFGUtL0wYWP8E0vkSzfkQK70C8AODwz-wFK1T/exec" 
+  frameborder="0" width="100%" height="500px"></iframe>
+  </div>
 
-        // How dates, times, and durations should be represented in the output.
-        // This is ignored if value_render_option is
-        // FORMATTED_VALUE.
-        // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-        dateTimeRenderOption: 'SERIAL_NUMBER',  // TODO: Update placeholder value.
-      };
 
-      var request = gapi.client.sheets.spreadsheets.values.get(params);
-      request.then(function(response) {
-        // TODO: Change code below to process the `response` object:
-        $("#data").empty;
-        $("#data").html(response.result.values);
-        console.log(response.result.values);
-      }, function(reason) {
-        console.error('error: ' + reason.result.error.message);
-      });
-    }
-
-    function initClient() {
-      var API_KEY = 'AIzaSyBU7u90ZO9sFp_mkYSZNBiayBmWvA3Hopg';  // TODO: Update placeholder with desired API key.
-
-      var CLIENT_ID = '507787624585-otk8u619f4tls6hre5epmt47tj8uac84.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
-
-      // TODO: Authorize using one of the following scopes:
-      //   'https://www.googleapis.com/auth/drive'
-      //   'https://www.googleapis.com/auth/drive.file'
-      //   'https://www.googleapis.com/auth/drive.readonly'
-      //   'https://www.googleapis.com/auth/spreadsheets'
-      //   'https://www.googleapis.com/auth/spreadsheets.readonly'
-      var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
-
-      gapi.client.init({
-        'apiKey': API_KEY,
-        'clientId': CLIENT_ID,
-        'scope': SCOPE,
-        'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-      }).then(function() {
-        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
-        updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-      });
-    }
-
-    function handleClientLoad() {
-      gapi.load('client:auth2', initClient);
-    }
-
-    function updateSignInStatus(isSignedIn) {
-      if (isSignedIn) {
-        makeApiCall();
-      }
-    }
-
-    function handleSignInClick(event) {
-      gapi.auth2.getAuthInstance().signIn();
-    }
-
-    function handleSignOutClick(event) {
-      gapi.auth2.getAuthInstance().signOut();
-    }
-    </script>
-    <script async defer src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
-    <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
-    <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
-  </body>
+    <!--Footer-->
+    <footer class="text-gray-600 body-font">
+    
+      <div class="bg-gray-100">
+        <div class="container px-5 py-12 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Plus VPN</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2021 Plus VPN |<a href="https://plusvpn.ml" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">Kashyap</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+</body>
 </html>
